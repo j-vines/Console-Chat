@@ -20,7 +20,6 @@ public class Client {
 		}
 		
 		//create reading and writing threads
-		//start
 		Writer writer = new Writer(socket);
 		Reader reader = new Reader(socket);
 		writer.start();
