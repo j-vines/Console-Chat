@@ -1,5 +1,10 @@
 package chat;
 
+/**
+ * Client-Server Chat
+ * Send messages over client server socket connection
+ * @author Jack Vines
+ */
 import java.io.*;
 import java.net.*;
 public class Client {

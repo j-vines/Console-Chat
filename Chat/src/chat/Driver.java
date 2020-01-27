@@ -1,5 +1,10 @@
 package chat;
 
+/**
+ * Client-Server Chat
+ * Send messages over client server socket connection
+ * @author Jack Vines
+ */
 import java.io.*;
 public class Driver {
 	
@@ -43,6 +48,9 @@ public class Driver {
 		}
 	}
 	
+	/*
+	 * Once user "logs in", present them with options to host or join chat server, or exit program
+	 */
 	public static void mainMenu(String name) {
 		username = name;
 		int answer = 0;

@@ -1,8 +1,12 @@
 package chat;
 
+/**
+ * Client-Server Chat
+ * Send messages over client server socket connection
+ * @author Jack Vines
+ */
 import java.io.*;
 import java.net.*;
-
 public class Writer extends Thread {
 	
 	private DataOutputStream output = null;
@@ -32,7 +36,7 @@ public class Writer extends Thread {
 		while(outgoingMessage != "EXIT") { //until user types EXIT, read for outgoing message and send it to other user
 			try {
 				outgoingMessage = userInput.readLine();
-				System.out.println("You> " + outgoingMessage);
+				//System.out.println("You> " + outgoingMessage);
 				output.writeUTF(outgoingMessage);
 			}
 			catch(IOException i) {

@@ -1,8 +1,12 @@
 package chat;
 
+/**
+ * Client-Server Chat
+ * Send messages over client server socket connection
+ * @author Jack Vines
+ */
 import java.io.*;
 import java.net.*;
-
 public class Reader extends Thread {
 	
 	private DataInputStream input = null;
