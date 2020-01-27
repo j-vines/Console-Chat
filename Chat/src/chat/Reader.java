@@ -25,7 +25,13 @@ public class Reader extends Thread {
 		//first read user name
 		try {
 			otherUsername = input.readUTF();
-			System.out.println("YOU ARE CHATTING WITH: " + otherUsername);
+			System.out.print("You are chatting with ");
+			if(otherUsername.equals("stranger")) { //user is anonymous
+				System.out.println("an anonymous user");
+			} else {								//user is not anonymous
+				System.out.println(otherUsername);
+			}
+			System.out.println("Say hello!");
 		}
 		catch(IOException i) {
 			System.out.println(i);
@@ -33,7 +39,7 @@ public class Reader extends Thread {
 		
 		String incomingMessage = "";
 		
-		while(incomingMessage != "EXIT") { //until user receives EXIT, read for incoming message and print it
+		while(!incomingMessage.equals("EXIT")) { //until user receives EXIT, read for incoming message and print it
 			try {
 				incomingMessage = input.readUTF();
 				System.out.println(otherUsername + "> " + incomingMessage);
@@ -42,6 +48,9 @@ public class Reader extends Thread {
 				System.out.println(i);
 			}
 		}
+		//other user has sent "EXIT"
+		System.out.println(otherUsername + " has disconnected");
+		System.exit(0);
 	}
 	
 }

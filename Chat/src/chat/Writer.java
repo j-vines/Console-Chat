@@ -33,7 +33,7 @@ public class Writer extends Thread {
 		
 		String outgoingMessage = "";
 		
-		while(outgoingMessage != "EXIT") { //until user types EXIT, read for outgoing message and send it to other user
+		while(!outgoingMessage.equals("EXIT")) { //until user types EXIT, read for outgoing message and send it to other user
 			try {
 				outgoingMessage = userInput.readLine();
 				//System.out.println("You> " + outgoingMessage);
@@ -43,5 +43,8 @@ public class Writer extends Thread {
 				System.out.println(i);
 			}
 		}
+		//you've sent "EXIT"
+		System.out.println("You've disconnected");
+		System.exit(0);
 	}
 }
